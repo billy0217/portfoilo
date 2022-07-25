@@ -1,0 +1,60 @@
+body{
+	margin: 0 auto;
+	line-height: 130%;
+}
+
+h1{
+	@include font-heading-48b;
+}
+
+h2{
+	@include font-heading-38b;
+}
+
+h3{
+	@include font-heading-24b;
+}
+
+h4{
+	@include font-heading-20;
+}
+
+h5{
+	@include font-heading-18;
+}
+
+p{
+	margin: 0 0 15px;
+}
+
+b,strong{
+	font-weight: 700;
+}
+
+a{
+	color: $blue;
+	color: var(--primary-a);
+	text-decoration: none;
+	&:hover{
+		color: $blue--dark;
+		color: var(--primary-c);
+	}
+}
+
+.c-icon-link{
+	display: inline-flex;
+	align-items: center;
+	color: $body-color;
+	color: var(--secondary-c);
+
+	&:hover {
+		color: $blue--dark;
+		color: var(--primary-c);
+	}
+}
+
+.c-icon-link__icon {
+	display: inline-block;
+	margin-right: 10px;
+	font-size: 20px;
+}

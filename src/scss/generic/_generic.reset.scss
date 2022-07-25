@@ -1,0 +1,27 @@
+﻿/* GENERIC.RESET */
+
+// Use 'border-box' for all elements
+// More info: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+html {
+	box-sizing: border-box;
+}
+
+* {
+	&,
+	&:before,
+	&:after {
+		box-sizing: inherit;
+	}
+}
+
+body,
+pre,
+h1, h2, h3, h4, h5, h6,
+dl, dd,
+form, fieldset, legend,
+figure,
+table, th, td,
+hr {
+	margin:0;
+	padding:0;
+}

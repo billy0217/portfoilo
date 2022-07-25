@@ -1,0 +1,12 @@
+// Retrieve value from breakpoint config map
+// $bp: breakpoint list
+// $key: string value of key to return
+@function bp-config-value($breakpoint, $value) {
+	$config: nth($breakpoint, 2);
+
+	@if (map-has-key($config, $value)) {
+		@return map-get($config, $value);
+	} @else {
+		@warn "Unfortunately, no value could be retrieved for '#{$value}'. Please make sure it is a key defined in '$breakpoints' config map";
+	}
+}

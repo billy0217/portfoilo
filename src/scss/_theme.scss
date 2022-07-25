@@ -1,0 +1,66 @@
+// THEME
+
+$white: #fff;
+$black: #000;
+
+$grey--light: #f9f9f9;
+$grey--pale: #efefef;
+$grey: #ccc;
+$grey--mid: #666;
+$grey--dark: #4D4D4D;
+$grey--charcoal: #1c1a1a;
+
+$blue: #1CC0F9;
+$blue--light: lighten($blue, 10%);
+$blue--dark: #035a79;
+
+$red: #da2642;
+$red--dark: #780c15;
+
+$orange: #F1AB2C;
+$orange--dark: #f05323;
+
+$yellow: #FED110;
+$yellow--soft: #ffd13d;
+$yellow--dark: #e0a230;
+
+$green--lime: #85BA41;
+$green: #599e4c;
+$green--dark: #39883e;
+
+$brand: $blue;
+$brand--alt: $grey--dark;
+
+// Shared non-theme colours, e.g. alert, errors
+$success: #008000;
+$success--light: lighten($success, 40);
+$warning: #ffa500;
+$warning--light: lighten($warning, 40);
+$error: #f00;
+$error--light: lighten($error, 40);
+
+// Assign colours to common variables
+$body-color: $black;
+$base-ui-color: $grey;
+
+:root {
+	--primary-a: #{$blue};
+	--primary-b: #{$white};
+	--primary-c: #{$blue--dark};
+	--primary-font: #{$black};
+	--secondary-a: #{$grey--dark};
+	--secondary-b: #{$white};
+	--secondary-c: #{$black};
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--primary-a: #{$blue};
+		--primary-b: #{$white};
+		--primary-c: #{$blue--light};
+		--primary-font: #{$white};
+		--secondary-a: #{$grey--dark};
+		--secondary-b: #{$black};
+		--secondary-c: #{$white};
+	}
+}

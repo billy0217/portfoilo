@@ -1,0 +1,170 @@
+.c-projects {
+	@include bp("large") {
+		display: flex;
+		align-items: stretch;
+	}
+}
+
+.c-project__sidebar {
+	margin-bottom: $bsu;
+
+	@include bp("large") {
+		position: sticky;
+		top: ($header-height * 2);
+		align-self: flex-start;
+		margin-right: $hsu;
+		width: 30%;
+	}
+}
+
+.c-projects__list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	animation: slideinUp 0.8s ease-in-out alternate;
+
+	@supports (display: grid) {
+		display: grid;
+		grid-gap: $bsu;
+		grid-template-columns: repeat(1, 1fr);
+
+		@include bp("medium") {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+	@include bp("large") {
+		width: 70%;
+	}
+}
+
+.c-proejct {
+	width: 100%;
+	margin: $bsu 0;
+
+	@include bp("medium") {
+		width: 48%;
+		margin: $bsu 1%;
+	}
+
+	&:nth-child(3n + 1) {
+	}
+
+	@supports (display: grid) {
+		width: auto;
+		margin: 0;
+	}
+
+	&:hover {
+		.c-project__img {
+			transform: scale(1.2);
+		}
+	}
+}
+
+.c-proejct__thumb {
+	box-shadow: 0 0 10px rgba($black, 0.2);
+}
+
+.c-project__img {
+	transform: scale(1);
+	transition: all ease-in-out 0.5s;
+
+	.c-project__img-wrap & {
+		object-fit: contain;
+	}
+}
+
+.c-project__name {
+	color: $black;
+	color: var(--secondary-c);
+	margin: $ssu 0;
+}
+
+.c-project__role {
+	color: var(--secondary-c);
+}
+
+/*
+	Project detail
+*/
+
+.c-project__info {
+	@include bp("large") {
+		display: flex;
+		align-items: stretch;
+	}
+}
+
+.c-project__info-wrap {
+	order: 0;
+	width: 100%;
+	animation: slideinUp 0.8s ease-in-out alternate;
+	@include bp("large") {
+		order: 1;
+		width: 70%;
+	}
+}
+
+.c-project__back-top-list {
+	width: 100%;
+	order: 1;
+	@include bp("large") {
+		order: 0;
+		position: sticky;
+		top: ($header-height * 2);
+		align-self: flex-start;
+		margin-right: $hsu;
+		width: 30%;
+	}
+}
+
+.c-project__img-wrap {
+	margin-bottom: $lsu;
+	//box-shadow: 0 0 10px rgba($black, 0.2);
+
+	&:not(.c-project__info-main-img) {
+		margin-bottom: ($lsu * 1.5);
+	}
+}
+
+.c-project__info-detail {
+	margin-bottom: $lsu;
+}
+
+.c-project__info-role {
+	@include font-heading-20;
+	margin-bottom: $bsu;
+
+	span {
+		@include font-heading-20b;
+	}
+}
+
+.c-project__info-back-btn {
+	@include font-heading-20b;
+	text-transform: uppercase;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: $bsu $lsu;
+	border: 1px solid $black;
+	border: 1px solid var(--secondary-c);
+	color: $black;
+	color: var(--secondary-c);
+
+	&:hover {
+		color: $black;
+		color: var(--secondary-c);
+	}
+}
+
+.c-project__info-back-icon {
+	margin-right: $bsu;
+	position: relative;
+	left: 0;
+
+	.c-project__info-back-btn:hover & {
+		left: -#{$tsu};
+		transition: all ease-in-out 0.5s;
+	}
+}

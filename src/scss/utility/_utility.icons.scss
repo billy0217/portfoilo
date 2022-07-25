@@ -1,0 +1,211 @@
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?2js29') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?2js29') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?2js29##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="iconf-"], [class*=" iconf-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconf-codepen {
+  &:before {
+    content: $iconf-codepen; 
+  }
+}
+.iconf-home {
+  &:before {
+    content: $iconf-home; 
+  }
+}
+.iconf-pencil {
+  &:before {
+    content: $iconf-pencil; 
+  }
+}
+.iconf-camera {
+  &:before {
+    content: $iconf-camera; 
+  }
+}
+.iconf-play {
+  &:before {
+    content: $iconf-play; 
+  }
+}
+.iconf-file-text2 {
+  &:before {
+    content: $iconf-file-text2; 
+  }
+}
+.iconf-file-picture {
+  &:before {
+    content: $iconf-file-picture; 
+  }
+}
+.iconf-file-zip {
+  &:before {
+    content: $iconf-file-zip; 
+  }
+}
+.iconf-phone {
+  &:before {
+    content: $iconf-phone; 
+  }
+}
+.iconf-map2 {
+  &:before {
+    content: $iconf-map2; 
+  }
+}
+.iconf-display {
+  &:before {
+    content: $iconf-display; 
+  }
+}
+.iconf-laptop {
+  &:before {
+    content: $iconf-laptop; 
+  }
+}
+.iconf-mobile {
+  &:before {
+    content: $iconf-mobile; 
+  }
+}
+.iconf-download {
+  &:before {
+    content: $iconf-download; 
+  }
+}
+.iconf-bubble {
+  &:before {
+    content: $iconf-bubble; 
+  }
+}
+.iconf-arrow-up2 {
+  &:before {
+    content: $iconf-arrow-up2; 
+  }
+}
+.iconf-arrow-right2 {
+  &:before {
+    content: $iconf-arrow-right2; 
+  }
+}
+.iconf-arrow-down2 {
+  &:before {
+    content: $iconf-arrow-down2; 
+  }
+}
+.iconf-arrow-left2 {
+  &:before {
+    content: $iconf-arrow-left2; 
+  }
+}
+.iconf-circle-up {
+  &:before {
+    content: $iconf-circle-up; 
+  }
+}
+.iconf-circle-right {
+  &:before {
+    content: $iconf-circle-right; 
+  }
+}
+.iconf-circle-down {
+  &:before {
+    content: $iconf-circle-down; 
+  }
+}
+.iconf-circle-left {
+  &:before {
+    content: $iconf-circle-left; 
+  }
+}
+.iconf-mail2 {
+  &:before {
+    content: $iconf-mail2; 
+  }
+}
+.iconf-facebook2 {
+  &:before {
+    content: $iconf-facebook2; 
+  }
+}
+.iconf-instagram {
+  &:before {
+    content: $iconf-instagram; 
+  }
+}
+.iconf-whatsapp {
+  &:before {
+    content: $iconf-whatsapp; 
+  }
+}
+.iconf-twitter {
+  &:before {
+    content: $iconf-twitter; 
+  }
+}
+.iconf-youtube {
+  &:before {
+    content: $iconf-youtube; 
+  }
+}
+.iconf-github {
+  &:before {
+    content: $iconf-github; 
+  }
+}
+.iconf-appleinc {
+  &:before {
+    content: $iconf-appleinc; 
+  }
+}
+.iconf-android {
+  &:before {
+    content: $iconf-android; 
+  }
+}
+.iconf-linkedin {
+  &:before {
+    content: $iconf-linkedin; 
+  }
+}
+.iconf-pinterest {
+  &:before {
+    content: $iconf-pinterest; 
+  }
+}
+.iconf-file-pdf {
+  &:before {
+    content: $iconf-file-pdf; 
+  }
+}
+.iconf-file-word {
+  &:before {
+    content: $iconf-file-word; 
+  }
+}
+.iconf-file-excel {
+  &:before {
+    content: $iconf-file-excel; 
+  }
+}

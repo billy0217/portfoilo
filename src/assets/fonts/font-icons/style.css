@@ -1,0 +1,137 @@
+@font-face {
+  font-family: 'icomoon';
+  src:
+    url('fonts/icomoon.ttf?2js29') format('truetype'),
+    url('fonts/icomoon.woff?2js29') format('woff'),
+    url('fonts/icomoon.svg?2js29#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="iconf-"], [class*=" iconf-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconf-codepen:before {
+  content: "\e901";
+}
+.iconf-home:before {
+  content: "\e900";
+}
+.iconf-pencil:before {
+  content: "\e905";
+}
+.iconf-camera:before {
+  content: "\e90f";
+}
+.iconf-play:before {
+  content: "\e912";
+}
+.iconf-file-text2:before {
+  content: "\e926";
+}
+.iconf-file-picture:before {
+  content: "\e927";
+}
+.iconf-file-zip:before {
+  content: "\e92b";
+}
+.iconf-phone:before {
+  content: "\e942";
+}
+.iconf-map2:before {
+  content: "\e94c";
+}
+.iconf-display:before {
+  content: "\e956";
+}
+.iconf-laptop:before {
+  content: "\e957";
+}
+.iconf-mobile:before {
+  content: "\e958";
+}
+.iconf-download:before {
+  content: "\e960";
+}
+.iconf-bubble:before {
+  content: "\e96b";
+}
+.iconf-arrow-up2:before {
+  content: "\ea3a";
+}
+.iconf-arrow-right2:before {
+  content: "\ea3c";
+}
+.iconf-arrow-down2:before {
+  content: "\ea3e";
+}
+.iconf-arrow-left2:before {
+  content: "\ea40";
+}
+.iconf-circle-up:before {
+  content: "\ea41";
+}
+.iconf-circle-right:before {
+  content: "\ea42";
+}
+.iconf-circle-down:before {
+  content: "\ea43";
+}
+.iconf-circle-left:before {
+  content: "\ea44";
+}
+.iconf-mail2:before {
+  content: "\ea84";
+}
+.iconf-facebook2:before {
+  content: "\ea91";
+}
+.iconf-instagram:before {
+  content: "\ea92";
+}
+.iconf-whatsapp:before {
+  content: "\ea93";
+}
+.iconf-twitter:before {
+  content: "\ea96";
+}
+.iconf-youtube:before {
+  content: "\ea9d";
+}
+.iconf-github:before {
+  content: "\eab0";
+}
+.iconf-appleinc:before {
+  content: "\eabe";
+}
+.iconf-android:before {
+  content: "\eac0";
+}
+.iconf-linkedin:before {
+  content: "\eac9";
+}
+.iconf-pinterest:before {
+  content: "\ead1";
+}
+.iconf-file-pdf:before {
+  content: "\eadf";
+}
+.iconf-file-word:before {
+  content: "\eae1";
+}
+.iconf-file-excel:before {
+  content: "\eae2";
+}

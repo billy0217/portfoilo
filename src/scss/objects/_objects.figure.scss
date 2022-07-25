@@ -1,0 +1,19 @@
+@use "sass:math";
+
+.o-fig {
+	position: relative;
+	padding-bottom: 100%;
+	overflow: hidden;
+
+	&.o-fig__landscape {
+		padding-bottom: percentage( math.div(3,4) );
+	}
+}
+
+.o-fig__img {
+	position: absolute;
+	object-fit: cover;
+    height: 100%;
+    width: 100%;
+    object-position: center;
+}

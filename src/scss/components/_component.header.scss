@@ -1,0 +1,39 @@
+$header-height : 90px;
+.c-header {
+	width: 100%;
+	position: fixed;
+	background-color: darken($grey--dark ,10%);
+	box-shadow: 0 5px 5px rgba($black, 0.3);
+	//background-color: var(--secondary-a);
+	top: 0;
+	z-index: 1;
+
+	&.is_home {
+
+		background-color: transparent;
+		box-shadow: none;
+		~ .c-header__spacer {
+			height: 0;
+		}
+	}
+}
+
+.c-header__spacer {
+	height: $header-height;
+}
+
+.c-header__container {
+	max-width: $layout-wrapper-max-width;
+	margin: 0 auto;
+	display: flex;
+    flex-direction: row;
+    padding: ($ssu * 1.5) $bsu;
+}
+
+.c-header__logo-wrapper {
+	width: 60px;
+}
+
+.c-header__logo {
+	display: inline-flex;
+}

@@ -1,0 +1,156 @@
+@use "sass:math";
+// layout
+
+@mixin layout {
+  max-width: $layout-wrapper-max-width;
+  margin: 0 auto;
+  flex-grow: 1;
+  padding: 0 $bsu;
+}
+
+
+// Resets
+@mixin button-reset {
+  // Used to reset styles on <button>s, not necessarily for .o-btn elements
+  // This can be used for interactive elements that aren't links
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+@mixin list-reset {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+// Links
+@mixin link-brand {
+  @include link-transition;
+  color: $brand;
+
+  &:hover,
+  &:focus {
+    color: darken($brand, 10);
+  }
+}
+
+@mixin link-plain {
+  @include link-transition;
+  color: $body-color;
+}
+// Breakpoint mixin
+// Uses $breakpoints variable set in _config.scss file
+@mixin bp($size) {
+
+  @if (type-of($size) == "number") {
+
+    @media (min-width: $size) {
+      @content;
+    }
+  } @else if (type-of($size) == "string") {
+
+    @each $breakpoint in $breakpoints {
+      // Get the name of the breakpoint.
+      $alias: nth($breakpoint, 1);
+
+      @if ($size == $alias) {
+        $start: bp-config-value($breakpoint, "start");
+
+        @media (min-width: $start) {
+          @content;
+        }
+      }
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from '#{$size}'. Please make sure it is defined in '$breakpoints' map.";
+  }
+}
+
+/* linear gradient */
+@function convert-angle($value, $unit) {
+  $convertable-units: deg grad turn rad;
+  $conversion-factors: 1 (10grad/9deg) (1turn/360deg) (3.1415926rad/180deg);
+  @if index($convertable-units, unit($value)) and index($convertable-units, $unit) {
+    @return $value
+             / nth($conversion-factors, index($convertable-units, unit($value)))
+             * nth($conversion-factors, index($convertable-units, $unit));
+  }
+
+  @warn "Cannot convert `#{unit($value)}` to `#{$unit}`.";
+}
+
+/// Test if `$value` is an angle
+/// @param {*} $value - Value to test
+/// @return {Bool}
+@function is-direction($value) {
+  $is-direction: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
+  $is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value));
+
+  @return $is-direction or $is-angle;
+}
+
+/// Convert a direction to legacy syntax
+/// @param {Keyword | Angle} $value - Value to convert
+/// @require {function} is-direction
+/// @require {function} convert-angle
+@function legacy-direction($value) {
+  @if is-direction($value) == false {
+    @warn "Cannot convert `#{$value}` to legacy syntax because it doesn't seem to be an angle or a direction";
+  }
+
+  $conversion-map: (
+    to top          : bottom,
+    to top right    : bottom left,
+    to right top    : left bottom,
+    to right        : left,
+    to bottom right : top left,
+    to right bottom : left top,
+    to bottom       : top,
+    to bottom left  : top right,
+    to left bottom  : right top,
+    to left         : right,
+    to left top     : right bottom,
+    to top left     : bottom right
+  );
+
+  @if map-has-key($conversion-map, $value) {
+    @return map-get($conversion-map, $value);
+  }
+
+  @return 90deg - convert-angle($value, 'deg');
+}
+
+/// Mixin printing a linear-gradient
+/// as well as a plain color fallback
+/// and the `-webkit-` prefixed declaration
+/// @access public
+/// @param {String | List | Angle} $direction - Linear gradient direction
+/// @param {Arglist} $color-stops - List of color-stops composing the gradient
+@mixin linear-gradient($direction, $color-stops...) {
+  @if is-direction($direction) == false {
+    $color-stops: ($direction, $color-stops);
+    $direction: 180deg;
+  }
+
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}
+
+/*
+examples
+@include linear-gradient(#31B7D7, #EDAC7D);
+@include linear-gradient(to right, #E47D7D 0%, #C195D3 50%, #4FB4E8 100%);
+@include linear-gradient(42deg, #B58234 0%, #D2B545 50%, #D7C04D 50.01%, #FFFFFF 100%);
+*/
+
+$color:('black', 'blue','orange', 'red', 'yellow', 'white');
+$val:($black, $blue, $orange, $red, $yellow, $white);
+$base-color: zip($color, $val);
+
+@mixin aspect-ratio($width, $height) {
+  padding-bottom: math.div($height , $width) * 100%;
+}

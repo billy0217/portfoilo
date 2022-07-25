@@ -1,0 +1,66 @@
+@use "sass:math";
+// Layout
+// Max width of layout wrapper which contains content
+// Width of sidebar (default is to float at 'large' breakpoint)
+$layout-wrapper-max-width: 1200px;
+$layout-wrapper-narrow-width: 1000px;
+$layout-aside-width: 280px;
+$layout-aside-gutter-width: 0px;
+
+// Spacings
+// $bsu: Base spacing unit
+// $tsu: Tiny spacing unit
+// $ssu: Small spacing unit
+// $lsu: Large spacing unit
+// $hsu: Huge spacing unit
+$bsu: 20px;
+$tsu: math.div($bsu, 4);
+$ssu: math.div($bsu, 2);
+$lsu: $bsu * 2;
+$hsu: $bsu * 4;
+
+
+// Breakpoints
+// Suffixes used for namespaced helpers
+// Pixel values will be output as em units
+$breakpoints: (
+	"extra-small" (
+		"suffix": "xs",
+		"start": 0,
+		"end": 479px
+	),
+	"small" (
+		"suffix": "s",
+		"start": 480px,
+		"end": 767px
+	),
+	"medium" (
+		"suffix": "m",
+		"start": 768px,
+		"end": 1023px
+	),
+	"large" (
+		"suffix": "l",
+		"start": 1024px,
+		"end": 1279px
+	),
+	"extra-large" (
+		"suffix": "xl",
+		"start": 1280px,
+		"end": 9000px
+	)
+);
+// Z-Index
+// 1
+$z-page: 1;
+
+// 2
+$z-header: 2;
+$z-share: 2;
+$z-slick-arrows: 2;
+
+// 3
+$z-tooltip: 3;
+
+// 4
+$z-back-to-top : 4;

@@ -1,0 +1,27 @@
+.c-footer {
+	width: 100%;
+
+	&.is_home {
+		position: fixed;
+		bottom: 0;
+		z-index: 1;
+	}
+}
+
+.c-footer__wrapper {
+	@include font-base-12b;
+	max-width: $layout-wrapper-max-width;
+	margin: 0 auto;
+	display: flex;
+    flex-direction: row;
+    padding: $ssu $bsu;
+
+    color: $grey--dark;
+    color: var(--secondary-a);
+
+
+    .is_home & {
+    	 color: $white;
+    	color: var(--secondary-b);
+    }
+}
