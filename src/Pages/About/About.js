@@ -50,9 +50,9 @@ const About = () => {
 					<h2 className="c-section__heading">About</h2>
 					<p>I am a Full stack Web Developer with more than {totalExp} of professional experience, who is passionate about working with responsive and interactive websites</p>
 					<p>I'm a very responsible and hard-working professional. I very much  enjoy  being a developer and I'm always researching and  learning the latest technologies that could be helpful for the company and its customers.</p>
-					<p>If you want to know more about me? follow me <strong><a href="https://www.linkedin.com/in/billy-han-1a253976/" target="_blank">Linkedin</a></strong> or reach out by <strong><a href="mailto:nada_billy0217@hotmail.com">email</a></strong></p>
-					<p><a href="https://github.com/billy0217/" target="_blank" className="c-icon-link"><FiGithub className="c-icon-link__icon" /> GitHub Repo</a></p>
-					<p><a href="https://codepen.io/billy0217/pens/public" target="_blank" className="c-icon-link"><FiCodepen className="c-icon-link__icon" /> CodePen Play Ground</a></p>
+					<p>If you want to know more about me? follow me <strong><a href="https://www.linkedin.com/in/billy-han-1a253976/" target="_blank" rel="noreferrer">Linkedin</a></strong> or reach out by <strong><a href="mailto:nada_billy0217@hotmail.com">email</a></strong></p>
+					<p><a href="https://github.com/billy0217/" target="_blank" className="c-icon-link" rel="noreferrer"><FiGithub className="c-icon-link__icon" /> GitHub Repo</a></p>
+					<p><a href="https://codepen.io/billy0217/pens/public" target="_blank" className="c-icon-link" rel="noreferrer"><FiCodepen className="c-icon-link__icon" /> CodePen Play Ground</a></p>
 				</div>
 			</section>
 		</div>
