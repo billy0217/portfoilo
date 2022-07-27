@@ -11,7 +11,9 @@ const Card = (props) => {
 			>
 				<figure className="o-fig o-fig__landscape c-proejct__thumb">
 					<picture>
-						<source srcSet={props.project?.webpSrc} type="image/webp" />
+						{props.project.webp &&
+							<source srcSet={props.project?.webp} type="image/webp" />
+						}
 						<img src={props.project.src} className="c-project__img o-fig__img" alt="" />
 					</picture>
 				</figure>

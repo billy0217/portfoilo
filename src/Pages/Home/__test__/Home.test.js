@@ -7,5 +7,5 @@ test("Render Home page text render", () => {
 	render(<Home />);
 	const mainText = screen.getByRole("heading");
 
-	expect(mainText.textContent).toBe("Hi! I am Billy, Full stack Web Developer at Terabyte ");
+	expect(mainText.textContent).toBe("Hi! I am Billy, Full stack Web Developer at Terabyte");
 })

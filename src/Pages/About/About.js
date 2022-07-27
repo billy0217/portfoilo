@@ -45,7 +45,7 @@ const About = () => {
 
 	return (
 		<div>
-			<section className="c-section c-section__about">
+			<section className="c-section">
 				<div className="c-section__content">
 					<h2 className="c-section__heading">About</h2>
 					<p>I am a Full stack Web Developer with more than {totalExp} of professional experience, who is passionate about working with responsive and interactive websites</p>

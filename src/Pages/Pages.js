@@ -6,6 +6,7 @@ import NotFound from './NotFound/NotFound'
 import Footer from '../Components/Footer/Footer'
 import About from './About/About'
 import Work from './Work/Work'
+import Project from './Project/Project'
 
 const Pages = () => {
 	const location = useLocation();
@@ -32,7 +33,7 @@ const Pages = () => {
 				<Route path="/about" element={<About />} />
 				<Route path="/work">
 					<Route index element={<Work />} />
-					<Route path=":slug" element={<Work />} />
+					<Route path=":slug" element={<Project />} />
 				</Route>
 				<Route path="*" element={<NotFound />} />
 			</Routes>

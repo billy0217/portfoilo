@@ -54,6 +54,7 @@ const Header = (props) => {
 					</nav>
 				</div>
 			</header>
+			<div className="c-header__spacer"></div>
 		</div>
 	)
 }
