@@ -6,3 +6,8 @@ import App from './App';
 //   const linkElement = screen.getByText(/learn react/i);
 //   expect(linkElement).toBeInTheDocument();
 // });
+
+// test('check env file', () => {
+// 	const apiKey = process.env.REACT_APP_CONTENTFULL_ID;
+// 	expect(apiKey).not.toBe('undefined')
+// });

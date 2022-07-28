@@ -41,7 +41,9 @@
     ]
   },
   "devDependencies": {
+    "env-cmd": "^10.1.0",
     "jest-watch-typeahead": "^0.6.5",
+    "react-app-env": "^1.2.3",
     "sass": "^1.53.0"
   }
 }

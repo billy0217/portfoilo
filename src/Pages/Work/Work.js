@@ -1,8 +1,12 @@
 import React from 'react'
 import Card from '../../Components/Card/Card';
+import { ProjectListQuery } from "../../contentfull/contentfull";
 
 const Work = () => {
+	
+	const query = ProjectListQuery(process.env.REACT_APP_PROJECTLIST_ID);
 
+	
 	const projectData = {
 		
 		slug : "project",
