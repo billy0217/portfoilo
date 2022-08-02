@@ -74,6 +74,10 @@
 	}
 }
 
+.c-project__img-wrap .o-fig__img {
+	object-fit: contain;
+}
+
 .c-project__name {
 	color: $black;
 	color: var(--secondary-c);
