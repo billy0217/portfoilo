@@ -1,62 +1,66 @@
 export const ProjectListQuery = (projectListID) => {
 	const query = `
-		{
-			query {
-				projectList(id: "${projectListID}") {
-					projectsCollection {
-						items {
-							sys{
-								id
-							}
-						}
-					}
-				}
-				projectCollection {
+		
+		query {
+			projectList(id: "${projectListID}") {
+				projectsCollection {
 					items {
-						sys {
+						sys{
 							id
-						}
-						name
-						slug
-						thumb {
-							url
 						}
 					}
 				}
 			}
+			projectCollection {
+				items {
+					sys {
+						id
+					}
+					name
+					slug
+					role
+					workFrom
+					thumb {
+						url
+					}
+				}
+			}
 		}
+		
 	`
 	return query;
 }
 
 
-export const ProjectQuery = () => {
+export const ProjectQuery = (slug) => {
 	const query = `
-		{
+		
 			query {
-				projectList(id: "${process.env.REACT_APP_PROJECTLIST_ID}") {
-					projectsCollection {
-						items {
-							sys{
-								id
-							}
-						}
-					}
-				}
-				projectCollection {
+				projectCollection(where: {slug: "${slug}"}) {
 					items {
-						sys {
-							id
-						}
 						name
 						slug
-						thumb {
+						client
+						link
+						role
+						workFrom
+						type
+						tech
+						image {
 							url
+						}
+						imagesCollection {
+							items {
+								url
+							}
+						}
+						description {
+							json
 						}
 					}
 				}
 			}
-		}
+		
 	`
 	return query;
 }
