@@ -18,7 +18,7 @@ const Card = (props) => {
 					</picture>
 				</figure>
 				<h3 className="c-project__name">{props.project.name}</h3>
-				<p className="c-project__role">{props.project.role} role from {props.project.company}</p>
+				<p className="c-project__role">{props.project?.company} - {props.project?.role} role</p>
 			</Link>
 		</>
 	)

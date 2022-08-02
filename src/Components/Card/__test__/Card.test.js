@@ -45,5 +45,5 @@ test("Card role text should be Full Stack Developer role from Freelance", () => 
 
 	const projectRole = screen.getByText(/full/i);
 
-	expect(projectRole.textContent).toBe("Full Stack Developer role from Freelance");
+	expect(projectRole.textContent).toBe("Freelance - Full Stack Developer role");
 });
