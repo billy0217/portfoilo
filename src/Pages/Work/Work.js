@@ -2,6 +2,15 @@ import React, { useEffect, useState } from 'react'
 import Card from '../../Components/Card/Card';
 import { ProjectListQuery } from "../../contentfull/contentfull";
 
+
+function ScrollToTopOnMount() {
+	useEffect(() => {
+	  window.scrollTo(0, 0);
+	}, []);
+  
+	return null;
+  }
+
 const Work = () => {
 	
 	const query = ProjectListQuery(process.env.REACT_APP_PROJECTLIST_ID);
@@ -30,7 +39,7 @@ const Work = () => {
 				// Project list
 				const projects = data.projectCollection.items;
 				// Sort 
-				const sortProjectList = IDs.map((i)=> projects.find((j) => j.sys.id === i.sys.id));
+				const sortProjectList = IDs.map((i)=> projects.find((j) => j?.sys.id === i?.sys.id));
 
 				var len = sortProjectList.length;
 				for (var i = 0; i < len; i++) {
@@ -50,6 +59,8 @@ const Work = () => {
 			});
 	},[query]);
 
+	
+
 	return (
 		<div>
 			<section className="c-section">
@@ -58,6 +69,7 @@ const Work = () => {
 						<h2 className="c-section__heading">Selected Works</h2>
 					</div>
 					<div className="c-projects__list">
+						<ScrollToTopOnMount />
 						{
 							projectData?.map((item) => {
 								return (

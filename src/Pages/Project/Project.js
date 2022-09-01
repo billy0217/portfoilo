@@ -5,6 +5,13 @@ import {ProjectQuery} from '../../contentfull/contentfull';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Image from '../../Components/Image/Image';
 
+function ScrollToTopOnMount() {
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+	return null;
+}
+
 const Project = () => {
 
 	let params = useParams();
@@ -46,7 +53,7 @@ const Project = () => {
 					type: p[0].type,
 					webp: p[0].image.url+"?fm=webp",
 					src: p[0].image.url,
-					content: p[0].description.json,
+					content: p[0].description?.json,
 					images: p[0].imagesCollection.items,
 				});
 				
@@ -68,7 +75,7 @@ const Project = () => {
 				}
 
 			});
-			
+
 	},[query]);
 
 
@@ -77,6 +84,7 @@ const Project = () => {
 			<section className="c-section">
 				<div className="c-project__info">
 					<div className="c-project__info-wrap">
+						<ScrollToTopOnMount />
 						<h2 className="c-section__heading c-project__info-name">{projectData[0]?.name}</h2>
 						<div className="c-project__img-wrap c-project__info-main-img">
 							<Image img={projectData[0]}/>
