@@ -8,7 +8,7 @@ const About = () => {
 
 		let df= new Date("6/14/2013");
 		let dt = new Date();
-		let allMonths = dt.getMonth() - df.getMonth() + (12 * (dt.getFullYear() - df.getFullYear()));
+		//let allMonths = dt.getMonth() - df.getMonth() + (12 * (dt.getFullYear() - df.getFullYear()));
 		let allYears= dt.getFullYear() - df.getFullYear();
 		let partialMonths = dt.getMonth() - df.getMonth();
 		let months;

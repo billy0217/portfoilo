@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/img/logo.svg';
 import { FiHome, FiGithub } from 'react-icons/fi';
