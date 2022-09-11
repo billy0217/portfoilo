@@ -24,6 +24,8 @@ const Project = () => {
 	useEffect(() => {
 		const project = [];
 		const imageList = [];
+		let loadDate = false;
+
 		window
 			.fetch(`https://graphql.contentful.com/content/v1/spaces/${process.env.REACT_APP_CONTENTFULL_ID}/`, {
 				method: "POST",
@@ -39,42 +41,50 @@ const Project = () => {
 					console.error(errors);
 				}
 
-				// Project list
-				const p = data.projectCollection.items;
-				
-				project.push({
-					name: p[0].name,
-					slug: p[0].slug,
-					client: p[0].client,
-					link: p[0].link,
-					role: p[0].role,
-					tech: p[0].tech,
-					workFrom: p[0].workFrom,
-					type: p[0].type,
-					webp: p[0].image.url+"?fm=webp",
-					src: p[0].image.url,
-					content: p[0].description?.json,
-					images: p[0].imagesCollection.items,
-				});
-				
+				if(!loadDate){
+					// Project list
+					const p = data.projectCollection.items;
+					
+					project.push({
+						name: p[0].name,
+						slug: p[0].slug,
+						client: p[0].client,
+						link: p[0].link,
+						role: p[0].role,
+						tech: p[0].tech,
+						workFrom: p[0].workFrom,
+						type: p[0].type,
+						webp: p[0].image.url+"?fm=webp",
+						src: p[0].image.url,
+						content: p[0].description?.json,
+						images: p[0].imagesCollection.items,
+					});
+					
 
-				setProjectData(project);
-				
-				if(project[0].images.length > 0) {
-					var len = project[0].images.length;
-					for (var i = 0; i < len; i++) {
-						imageList.push({
-							key: i,
-							webp: project[0].images[i].url+"?fm=webp",
-							src: project[0].images[i].url
-						});
+					setProjectData(project);
+					
+					if(project[0].images.length > 0) {
+						var len = project[0].images.length;
+						for (var i = 0; i < len; i++) {
+							imageList.push({
+								key: i,
+								webp: project[0].images[i].url+"?fm=webp",
+								src: project[0].images[i].url
+							});
+						}
+						setImgSet(imageList);
+					}else{
+						setImgSet([]);
 					}
-					setImgSet(imageList);
-				}else{
-					setImgSet([]);
 				}
 
 			});
+		
+		//return clean up function
+		return () => {
+			loadDate = true;
+			console.log("load content")
+		}
 
 	},[query]);
 

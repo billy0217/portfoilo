@@ -2,14 +2,12 @@ import React, { useEffect, useState } from 'react'
 import Card from '../../Components/Card/Card';
 import { ProjectListQuery } from "../../contentfull/contentfull";
 
-
 function ScrollToTopOnMount() {
 	useEffect(() => {
-	  window.scrollTo(0, 0);
+		window.scrollTo(0, 0);
 	}, []);
-  
 	return null;
-  }
+}
 
 const Work = () => {
 	
@@ -19,6 +17,8 @@ const Work = () => {
 
 	useEffect(() => {
 		const projectList = [];
+		let loadDate = false;
+
 		window
 			.fetch(`https://graphql.contentful.com/content/v1/spaces/${process.env.REACT_APP_CONTENTFULL_ID}/`, {
 				method: "POST",
@@ -34,29 +34,37 @@ const Work = () => {
 					console.error(errors);
 				}
 
-				// ID list
-				const IDs = data.projectList.projectsCollection.items;
-				// Project list
-				const projects = data.projectCollection.items;
-				// Sort 
-				const sortProjectList = IDs.map((i)=> projects.find((j) => j?.sys.id === i?.sys.id));
+				if(!loadDate){
+					// ID list
+					const IDs = data.projectList.projectsCollection.items;
+					// Project list
+					const projects = data.projectCollection.items;
+					// Sort 
+					const sortProjectList = IDs.map((i)=> projects.find((j) => j?.sys.id === i?.sys.id));
 
-				var len = sortProjectList.length;
-				for (var i = 0; i < len; i++) {
-					projectList.push({
-						id: sortProjectList[i].sys.id,
-						name: sortProjectList[i].name,
-						slug: sortProjectList[i].slug,
-						webp: sortProjectList[i].thumb.url+"?fm=webp",
-						src: sortProjectList[i].thumb.url,
-						role: sortProjectList[i].role,
-						company: sortProjectList[i].workFrom
-					});
+					var len = sortProjectList.length;
+					for (var i = 0; i < len; i++) {
+						projectList.push({
+							id: sortProjectList[i].sys.id,
+							name: sortProjectList[i].name,
+							slug: sortProjectList[i].slug,
+							webp: sortProjectList[i].thumb.url+"?fm=webp",
+							src: sortProjectList[i].thumb.url,
+							role: sortProjectList[i].role,
+							company: sortProjectList[i].workFrom
+						});
+					}
+
+					setProjectData(projectList);
 				}
-
-				setProjectData(projectList);
 				
 			});
+		
+		//return clean up function
+		return () => {
+			loadDate = true;
+			console.log("load data");
+		}
 	},[query]);
 
 	
